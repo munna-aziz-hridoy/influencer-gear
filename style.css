@@ -11,6 +11,7 @@
   --primary-color: #2827cc;
   --text-color: #0d0d0d;
   --text-color-light: #242b2e;
+  --star-color: #fb8200;
 
   --heading-font: "Poppins", sans-serif;
   --text-font: "Montserrat", sans-serif;
@@ -160,11 +161,100 @@
   width: 100%;
 }
 
+/* Product section */
+.product {
+  padding: 5rem 0;
+}
+
+.section_title {
+  position: relative;
+  font-family: var(--heading-font);
+  font-size: 2rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+.section_title::after {
+  content: "Product";
+  position: absolute;
+  font-size: 10rem;
+  left: 0;
+  top: 0;
+  transform: translate(10px, -106px);
+  z-index: -1;
+  color: #e0e0e046;
+}
+
+.product_items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  justify-items: center;
+  margin-top: 60px;
+}
+
+.product_item {
+  width: 350px;
+  height: 475px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 40px rgb(0 0 0 / 15%);
+}
+
+.product_item img {
+  width: 100%;
+  height: 220px;
+}
+
+.product_title {
+  font-family: var(--heading-font);
+  text-transform: capitalize;
+  margin: 0.7rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.product_price {
+  font-family: var(--text-font);
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+  display: inline-block;
+}
+
+.product_rating {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.rating_star i {
+  color: var(--star-color);
+}
+
+.rating_point {
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.product_description {
+  font-size: 1rem;
+  font-family: var(--text-font);
+  margin: 10px 0;
+}
+
 /* Media query */
 
 @media only screen and (max-width: 1200px) {
   .container {
     width: 85%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .product_items {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -195,6 +285,21 @@
     width: 150px;
     height: 40px;
     font-size: 0.8rem;
+  }
+
+  .section_title::after {
+    font-size: 0;
+  }
+
+  .product_item {
+    width: 300px;
+    height: 430px;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  .product_items {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
